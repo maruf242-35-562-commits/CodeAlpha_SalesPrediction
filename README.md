@@ -37,10 +37,6 @@ Hold-out R² ≈ 0.994.
 - At an average market, an extra $1k on **radio adds ~0.20k units vs ~0.03k for TV** (about 6x), and the gap holds in 100% of bootstrap refits.
 - At a $150k TV+Radio budget, putting radio at its observed maximum (~$49.5k) and the rest in TV is predicted to sell ~25% more than the typical split. The optimum sits at the edge of the data, so do not extrapolate beyond it, and treat results as associations that should be pilot-tested.
 
-## Charts
-![Model comparison](images/05_model_comparison.png)
-![Response surface](images/07_response_surface.png)
-![Budget allocation](images/08_budget_allocation.png)
 
 ## Predict sales
 ```python
@@ -49,11 +45,4 @@ model = joblib.load("sales_model.joblib")
 print(model.predict(pd.DataFrame({"TV": [150], "Radio": [20]})))   # thousand units
 ```
 
-## Limitations
-200 markets, no date column (not a time series), spend ranges limited to TV ≤ 296 and Radio ≤ 50, observational data. Units assumed to be $ thousands / thousand units as in the standard version of this dataset.
 
-## Run it
-```bash
-pip install -r requirements.txt
-jupyter notebook Sales_Prediction.ipynb
-```
